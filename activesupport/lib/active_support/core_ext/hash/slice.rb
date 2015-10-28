@@ -38,6 +38,16 @@ class Hash
     end
   end
 
+  def slice_old!(*keys)
+    keys.map! { |key| convert_key(key) } if respond_to?(:convert_key, true)
+    omit = slice(*self.keys - keys)
+    hash = slice(*keys)
+    hash.default      = default
+    hash.default_proc = default_proc if default_proc
+    replace(hash)
+    omit
+  end
+
   # Removes and returns the key/value pairs matching the given keys.
   #
   #   { a: 1, b: 2, c: 3, d: 4 }.extract!(:a, :b) # => {:a=>1, :b=>2}

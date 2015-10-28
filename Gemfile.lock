@@ -221,6 +221,7 @@ GEM
       nokogiri
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
+    memory_profiler (0.9.6)
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.6.2)
@@ -334,6 +335,7 @@ DEPENDENCIES
   json
   kindlerb (= 0.1.1)
   mail!
+  memory_profiler
   minitest (< 5.3.4)
   mocha (~> 0.14)
   mysql (>= 2.9.0)
